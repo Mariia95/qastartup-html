@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Main</title>
+  <style>
+    .main {
+      width: 500px;
+      height: 500px;
+      margin: auto;
+      border: 3px solid rgb(211, 211, 211);
+      font-family: Arial, Geneva, sans-serif;
+    }
+
+    .header {
+      height: 60px;
+      text-align: center;
+      background-color: rgb(61, 79, 91);
+      color: rgb(255, 255, 255);
+      font-size: 20px;
+      line-height: 60px;
+    }
+
+    .sidebar {
+      width: 140px;
+      height: 430px;
+      padding: 5px;
+      float: left;
+      background: linear-gradient( to right, rgb(66, 66, 66), rgb(111, 111, 111));
+    }
+
+    .content-block {
+      width: 350px;
+      float: left;
+      background-color: rgb(255, 255, 255);
+    }
+
+    .content-info {
+      background-color: rgb(255, 255, 255);
+      margin: 15px 25px 15px 10px;
+      border-bottom: 2px solid rgb(0, 128, 255);
+      color: rgb(8, 75, 138);
+      font-size: 17px;
+      padding-bottom: 5px;
+    }
+
+    .content-info p {
+      line-height: 9px;
+    }
+
+    .sidebar-image {
+      height: 100px;
+      margin-top: 20px;
+      margin-left: 20px;
+      border: 2px solid rgb(211, 211, 211);
+      border-radius: 20px;
+    }
+
+    .sidebar .photo {
+      border-bottom: 2px solid rgb(255, 255, 0);
+      margin: 10px;
+      color: rgb(255, 255, 255);
+      font-size: 24px;
+    }
+
+    .statusbar {
+      border-spacing: 0px 5px;
+    }
+
+    .statusbar .orange {
+      background-color: rgb(255, 165, 0);
+      border-radius: 3px;
+      font-size: 10px;
+    }
+
+    .statusbar .blue {
+      background-color: rgb(1, 116, 223);
+      border-radius: 3px;
+      font-size: 10px;
+    }
+
+    .statusbar .green {
+      background-color: rgb(0, 128, 0);
+      border-radius: 3px;
+      font-size: 10px;
+    }
+
+    .statusbar td {
+      text-align: center;
+      padding: 2px 15px 2px 15px;
+    }
+
+    .sidebar .networks {
+      color: rgb(255, 255, 255);
+    }
+
+    .sidebar .networks .decor {
+      text-decoration: underline;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .sidebar .links {
+      background: transparent;
+    }
+
+    A {
+      color: rgb(54, 177, 255);
+    }
+
+    A:visited {
+      color: rgb(54, 177, 255);
+    }
+
+    A:active {
+      color: rgb(54, 177, 255);
+    }
+
+    .content-list {
+      list-style: none;
+      padding: 5px;
+      margin: -10px 0px 0px 0px;
+    }
+
+    .content-list li:before {
+      content: "-";
+      position: relative;
+      left: -5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="header">Curriculum vitae </div>
+    <div class="container">
+      <div class="sidebar">
+        <div class="photo">
+          <img class="sidebar-image" src="fox.jpg">
+          <span>Лисичка</span>
+        </div>
+        <div class="networks">
+          <p class="decor">Люблю:</p>
+          <table class="statusbar">
+            <tr>
+              <td colspan="3" class="orange">Зайчиков</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td colspan="2" class="blue">Мышек</td>
+              <td> </td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td colspan="4" class="green">Птичек</td>
+            </tr>
+          </table>
+          <p class="decor">Контакты</p>
+          <ul class="sidebar-list">
+            <li>
+              <a class="link" href="https://twitter.com/">twitter</a>
+            </li>
+            <li>
+              <a class="link" href="https://vk.com/">vk</a>
+            </li>
+            <li>
+              <a class="link" href="https://www.facebook.com/">fb</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="content-block">
+        <div class="content-info">
+          <p>
+            <b>Дата рождения:</b>
+          </p>
+          <p>5 мая 2001г</p>
+          <p>
+            <b>Место рождения:</b>
+          </p>
+          <p>Живописная полянка</p>
+        </div>
+        <div class="content-info">
+          <p>
+            <b>Soft skills:</b>
+          </p>
+          <ul class="content-list">
+            <li>Photoshop</li>
+            <li>Word</li>
+            <li>Paint</li>
+          </ul>
+        </div>
+        <div class="content-info">
+          <p>
+            <b>Обо мне:</b>
+          </p>
+          <ul class="content-list">
+            <li>Мечтаю</li>
+            <li>Веду здоровый образ жизни</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
