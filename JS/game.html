@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>game</title>
+        <style type="text/css">
+                #container {
+                        width: 350px;
+                        margin-top: 20%;
+                        border: 2px solid rgb(255, 26, 117);
+                        padding: 20px;
+                        text-align: center;
+                        background-color: rgb(255, 204, 255);
+                        left: 30%;
+                        position: relative;
+                        border-radius: 5px;
+                }
+
+                fieldset {
+                        color: rgb(0, 0, 139);
+                        border-color: rgb(153, 0, 153);
+                        border-radius: 5px;
+                }
+
+                input[type="text"] {
+                        height: 30px;
+                        font-size: 24px;
+                        width: 50px;
+                        text-align: center;
+                        margin-bottom: 20px;
+                        color: rgb(0, 0, 153);
+                        border-radius: 5px;
+                        border-color: rgb(153, 0, 153);
+                        background-color: rgb(255, 230, 240);
+                }
+
+                input[type="button"] {
+                        height: 30px;
+                        font-size: 16px;
+                        width: 60px;
+                        text-align: left;
+                        margin-bottom: 20px;
+                        color: rgb(0, 204, 204);
+                        border-radius: 5px;
+                        border-color: rgb(153, 0, 153);
+                        background-color: rgb(255, 230, 240);
+                }
+
+                #info,
+                #output {
+                        color: rgb(65, 105, 225);
+                        margin-bottom: 20px;
+                }
+        </style>
+</head>
+
+<body>
+        <div id="container">
+                <fieldset>
+                        <legend>GUESS THE NUMBER</legend>
+                        <div id="info">Input the number from 1 to 10</div>
+                        <div>
+                                <input type="text" id="userInput" placeholder="0" />
+                        </div>
+                        <div id="message"> </div>
+                        <div>
+                                <input type="button" id="guessBtn" value="guess" onclick="compareUserNumber()" />
+                        </div>
+                </fieldset>
+        </div>
+        <script>
+                var randomNumber = getRandomNumberForGame();
+                var attemptsNumber = 0;
+                var failed = false;
+                var MAX_ATTEMPTS_COUNT = 3;
+
+                function getRandomNumberForGame() {
+                        var min = 1, max = 10;
+                        return Math.floor(Math.random() * (max - min)) + min;
+                }
+
+                function compareUserNumber() {
+                        if (failed) {
+                                return;
+                        }
+                        var inputValue = document.getElementById('userInput').value;
+                        var userNumber = parseInt(inputValue);
+                        if (userNumber <= 0 || userNumber > 10 || isNaN(userNumber)) {
+                                alert('Number is invalid! Set number from 1 to 10.');
+                                return;
+                        }
+                        attemptsNumber++;
+                        if (randomNumber != userNumber) {
+                                var message = '';
+                                if (randomNumber > userNumber) {
+                                        message = 'Input number bigger than ' + userNumber;
+                                } else {
+                                        message = 'Input number smaller than ' + userNumber;
+                                }
+                                message += '! Attempts left ' + (MAX_ATTEMPTS_COUNT - attemptsNumber) + '!';
+                                alert(message);
+
+                                if (MAX_ATTEMPTS_COUNT <= attemptsNumber) {
+                                        failed = true;
+                                        showMessage('You fail! Number = ' + randomNumber + '!');
+                                }
+                        } else {
+                                alert('You were right (attempts ' + attemptsNumber + ')');
+                                showMessage('You win!');
+                        }
+                }
+
+                function showMessage(text) {
+                        document.getElementById('message').textContent = text;
+                        document.getElementById('guessBtn').remove();
+                }
+
+        </script>
+</body>
+
+</html>
